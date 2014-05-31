@@ -1,3 +1,5 @@
+"use strict";
+
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -10,9 +12,22 @@ var users = require('./routes/users');
 
 var app = express();
 
+
+// Custom STUFF
+var swig = require('swig');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// app.set('view engine', 'jade');
+
+// Replace View engine with swig
+app.set('view engine', 'html');
+app.engine('html', swig.renderFile);
+
+// Set swig template caching to false
+app.set('view cache', false);
+swig.setDefaults({cache:false});
+
 
 app.use(favicon());
 app.use(logger('dev'));

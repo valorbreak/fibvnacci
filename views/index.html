@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fibvinacci</title>
+
+  <!-- Bootstrap -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/style.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Michroma' rel='stylesheet'
+        type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Jockey+One|Lobster|Oswald|Indie+Flower|Special+Elite|Audiowide|Cinzel|Orbitron' rel='stylesheet' type='text/css'>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script
+      src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script
+      src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<section class="main-content">
+  <div class="Absolute-Center">
+    <div class="container">
+      <div class="row">
+        <img class='adaptive logo' src="images/logo-fit.png"/>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="logo-caption">Turn your turf into art</div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="media-links">
+          <ul >
+            <li class="facebook-link"><a href="https://facebook.com/fibvnacci">FACEBOOK</a></li>
+            <li class="twitter-link"><a href="https://twitter.com/fibvnacci">TWITTER</a></li>
+            <li class="contact-link"><a href="mailto:emadukan@fibvnacci.com?subject=Mail from Our Site">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="contact-info">
+            <div class="mail">emadukan@fibnacci.com</div>
+            <div class="phone">240-447-6697</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script>
+
+  var isMobile = {
+    Android: function() {
+      return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+      return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+      return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+      return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+  };
+
+
+  var counter = 0;
+  var fonts = [
+    {'font-family': 'Jockey One'},
+    {'font-family': 'Lobster'},
+    {'font-family': 'Oswald'},
+    {'font-family': 'Indie Flower'},
+    {'font-family': 'Special Elite'},
+    {'font-family': 'Audiowide'},
+    {'font-family': 'Cinzel'},
+    {'font-family': 'Orbitron'},
+    {'font-family': 'Michroma'}
+  ];
+  var animateFont = function(){
+    $('.logo-caption').css(fonts[counter]);
+    counter++;
+    if(counter > 5){
+      counter = 0;
+    }
+  };
+
+  (function loopingFunction() {
+    animateFont();
+    setTimeout(loopingFunction, 200);
+  })();
+  // Disable these on mobile devices
+  if(!isMobile.any()){
+    $('.twitter-link').hover(
+      function(){ $(this).find('a').html('@fibvnacci')},
+        function(){ $(this).find('a').html('TWITTER')}
+    );
+    $('.facebook-link').hover(
+        function(){ $(this).find('a').html('FACEBOOK.COM/FIVNACCI')},
+        function(){ $(this).find('a').html('FACEBOOK')}
+    );
+  }
+  // Absolute center
+  /*$('section.main-content').css({
+    position: "absolute",
+    top: ($(window).height()/2) - ($('section.main-content').height()/2),
+    left: 0,
+    right: 0,
+    bottom: 0
+  });*/
+</script>
+</body>
+</html>

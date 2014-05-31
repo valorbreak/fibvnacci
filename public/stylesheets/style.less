@@ -1,8 +1,109 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import "variables.less";
+
+// Variables
+@font-heading: 'Michroma', sans-serif;
+// Use Green Colors
+@color-1: #98AE50; // Primary
+@color-2: #E7ECD6; // Secondary
+@color-3: #98AE50; // Tertiary
+@white: #FFFFFF;
+
+// MIXINS
+.box-1(){
+  padding: 14px 24px;
+  margin: 10px 0;
+  color: #FFF;
+  border-radius: 2px;
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+// CSS START
+body {
+ height: 100%;
+ background: url('/images/stripes.svg');
+}
+html {
+  height: 100%;
+}
+.main-content{
+  height: 100%;
+}
+.Absolute-Center {
+  position: relative;
+}
+.logo-caption {
+  font-family: @font-heading;
+  text-align: center;
+  font-size: 18px;
+}
+
+.fb-icon{
+  background-image: url('/images/FB-f-Logo__blue_50.png');
+}
+.contact-info {
+  font-family: @font-heading;
+  padding: 20px 0;
+  text-align: center;
+}
+
+img {
+  border: 0;
+  width: 100%;
+  display: block;
+  max-width: 100%;
+}
+img.logo{
+  padding: 40px 20px 20px 20px;
+}
+.media-links{
+  text-align: center;
+  li{
+    display: block;
+    // ugly inline block spacing fix
+    // http://css-tricks.com/fighting-the-space-between-inline-block-elements
+    margin-right: -4px;
+    margin-top: 10px;
+    a{
+      .box-1();
+      margin: 0 10px;
+      display: block;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: @font-heading;
+      background: @color-1;
+      border: 2px solid @color-1;
+    }
+    a:hover{
+      background: @color-2;
+      color: @color-1;
+      border: 2px solid @color-1;
+    }
+  }
+  ul{
+   padding: 0;
+   margin: 0;
+  }
+}
+@media @narrow{
+  .logo-caption {
+    font-size: 46px;
+    margin: 10px 0 20px 0;
+  }
+  img.logo{
+    padding: 0px 120px 20px 120px;
+  }
+  .media-links{
+    text-align: center;
+    li{
+      display: inline-block;
+    }
+  }
+  .Absolute-Center {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+  }
 }
