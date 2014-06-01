@@ -107,7 +107,7 @@
 
   (function loopingFunction() {
     animateFont();
-    setTimeout(loopingFunction, 200);
+    setTimeout(loopingFunction, 1500);
   })();
   // Disable these on mobile devices
   if(!isMobile.any()){
@@ -116,7 +116,7 @@
         function(){ $(this).find('a').html('TWITTER')}
     );
     $('.facebook-link').hover(
-        function(){ $(this).find('a').html('FACEBOOK.COM/FIVNACCI')},
+        function(){ $(this).find('a').html('FACEBOOK.COM/FIBVNACCI')},
         function(){ $(this).find('a').html('FACEBOOK')}
     );
   }
