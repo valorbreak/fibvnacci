@@ -6,6 +6,7 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var connect = require('connect');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -36,6 +37,9 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// HTTP AUTHENTICATION
+app.use(connect.basicAuth('admin', 'test123'));
 
 app.use('/', routes);
 app.use('/users', users);
