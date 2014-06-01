@@ -84,7 +84,6 @@
     }
   };
 
-
   var counter = 0;
   var fonts = [
     {'font-family': 'Jockey One'},
@@ -93,12 +92,12 @@
     {'font-family': 'Indie Flower'},
     {'font-family': 'Special Elite'},
     {'font-family': 'Audiowide'},
-    //{'font-family': 'Cinzel'},
     {'font-family': 'Orbitron'},
     {'font-family': 'Michroma'}
   ];
+  var logoCaption = $('.logo-caption');
   var animateFont = function(){
-    $('.logo-caption').css(fonts[counter]);
+    logoCaption.css(fonts[counter]);
     counter++;
     if(counter > 7){
       counter = 0;
@@ -124,14 +123,6 @@
         function(){ $(this).find('a').html('contact')}
     );
   }
-  // Absolute center
-  /*$('section.main-content').css({
-    position: "absolute",
-    top: ($(window).height()/2) - ($('section.main-content').height()/2),
-    left: 0,
-    right: 0,
-    bottom: 0
-  });*/
 </script>
 </body>
 </html>
